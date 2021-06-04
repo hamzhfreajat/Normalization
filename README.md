@@ -31,6 +31,7 @@ if one is missing**
  is going to be evaluated
 * Implemented production code should be written efficiently, the assumption for reading large files should
 be covered
+* You are only allowed to use Java SE API, any additional libraries shouldn't be used especially for calculations
 * The project build using maven should success and should execute all test cases, if you execute below
 build command through a terminal it should execute successfully
 ```shell script
