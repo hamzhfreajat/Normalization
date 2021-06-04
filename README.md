@@ -29,6 +29,8 @@ if one is missing**
 * All test cases in [unit tests](src/test/java/com/progressoft/tools/NormalizerTest.java) should be passed.
 * Implemented production code should be written as clean as possible, the quality of the submitted code
  is going to be evaluated
+* Implemented production code should be written efficiently, the assumption for reading large files should
+be covered
 * The project build using maven should success and should execute all test cases, if you execute below
 build command through a terminal it should execute successfully
 ```shell script
