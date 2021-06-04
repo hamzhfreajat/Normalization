@@ -55,6 +55,7 @@ java -jar interview-task-1.0-SNAPSHOT.jar /home/user/out/marks.csv /home/user/ou
     * Why would we need to use such normalization methods? describe by example, if possible.
     * In the unit tests, we used junit5 library, describe in your own words why would we use such library?
     * Mention down any difficulties or concerns you faced while working on the task. Your feedback is highly appreciated :D.
+    * If you implement any of the bonus points, please mentioned it in this file.
 
 # Bonus points
 To get additional points, you can apply one of the following:
@@ -63,3 +64,5 @@ to keep the old test cases as is without breaking any code in it and keeping it 
 * Support another type of files, like XML or json, make sure to not break the old cases as well.
 * Implement an HTML layout which allows a user to upload a file, choose the column to scale, 
 then generate the result CSV file.
+* There are some scenarios we didn't cover in our unit tests, can you find them and provide proper
+test coverage for them.
