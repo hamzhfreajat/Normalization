@@ -64,8 +64,8 @@ then generate the result CSV file, provide steps on how to use it.
 test coverage for them.
 
 # Grading Criteria
-* All deliverables under [Deliverables](#deliverables) section should be passed, the task will automatically fail
-if one of them is failed or not covered.
+* All deliverables under [Deliverables](#deliverables) section should pass, the task will automatically fail
+if at least one is not covered.
 * Implemented production code should be written as clean as possible, the quality of the submitted code
   is going to be evaluated
 * Your notes written in NOTES.MD is going to be considered.
