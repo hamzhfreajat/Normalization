@@ -22,6 +22,8 @@ To work on this project, you need the following:
 * A Java IDE like Eclipse, NetBeans, or IntelliJ, IntelliJ is preferred, community versions should
 suit your needs.
 * Git to clone the project or use the download link to download the project as zip.
+* You can follow [GUIDE](GUIDE.MD) to setup the project.
+
 
 # Deliverables
 **All requirements mentioned in this section is a must, the submission will be considered as failed
