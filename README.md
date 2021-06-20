@@ -1,10 +1,11 @@
-# interview-task
-This is an evaluation task that is handed to candidates to evaluate their coding and Object-Oriented 
-design skills. 
+# Important Note
+The purpose of this assignment is to evaluate the candidates skills as an initial step in the hiring process, it is
+important not to share your solution or even this task with any other party or other potential candidates, this
+will help both of us in our evaluation and hiring process and avoid any discomfort for both of us.
 
 # Task overview
 The candidate should implement a normalization java utility to be used to normalize
-numerical columns in a CSV file, the project will support two types of normalization and standardization:
+numerical columns in a CSV file, the project will support two types of normalization approaches:
 * Z-Score
 * Min-Max scaling
 
@@ -12,7 +13,7 @@ Interface [Normalizer](src/main/java/com/progressoft/tools/Normalizer.java) defi
 for both normalization techniques.
 
 The candidate should follow the [unit tests](src/test/java/com/progressoft/tools/NormalizerTest.java)
-in this project to identify what is the expected behavior to implement.
+in this project to identify what is the expected behavior to be implement.
 
 # Required setup
 To work on this project, you need the following:
@@ -25,47 +26,46 @@ suit your needs.
 # Deliverables
 **All requirements mentioned in this section is a must, the submission will be considered as failed
 if one is missing**
-* The candidate should clone this project then deliver a zip file or a git repository URL as a submission.
-* All test cases in [unit tests](src/test/java/com/progressoft/tools/NormalizerTest.java) should be passed.
-* Implemented production code should be written as clean as possible, the quality of the submitted code
- is going to be evaluated
-* Implemented production code should be written efficiently, the assumption for reading large files should
-be covered
+* The candidate should clone this project, add his solution, then deliver it as a compressed file.
+* All test cases in [unit tests](src/test/java/com/progressoft/tools/NormalizerTest.java) should pass.
 * You are only allowed to use Java SE API, any additional libraries shouldn't be used especially for calculations
+* Always use HALF_EVEN when rounding decimal places and fractions.
 * The project build using maven should success and should execute all test cases, if you execute below
 build command through a terminal it should execute successfully
 ```shell script
 mvn clean install
 ``` 
-* Beside having a successful test cases, the submission should provide an executable jar file which
-allows the evaluator to use the implemented utility through command line as below:
-```shell script
-java -jar iterview-task-1.0-SNAPSHOT.jar [SOURCE_PATH] [DEST_PATH] [COLUMN_TO_NORMALIZE] [NORMALIZATION_METHOD]
-```
-for example: if we want to read the ```/home/user/in/marks.csv``` file, apply a Min-Max normalization against
- ```mark``` column in it, then save the updated csv file to ```/home/user/out/marks_normalized.csv```, 
- the command should look like below:
-```shell script
-java -jar interview-task-1.0-SNAPSHOT.jar /home/user/out/marks.csv /home/user/out/marks_normalized.csv mark min-max
-``` 
-if z-score is what to apply, the command should look like below:
-```shell script
-java -jar interview-task-1.0-SNAPSHOT.jar /home/user/out/marks.csv /home/user/out/marks_normalized.csv mark z-score
-``` 
-* Your submission should have a NOTES.MD file, in which you should describe the following:
-    * Describe in your own words what is z-score.
-    * Describe in your own words what is Min-Max scaling.
-    * Why would we need to use such normalization methods? describe by example, if possible.
-    * In the unit tests, we used junit5 library, describe in your own words why would we use such library?
-    * Mention down any difficulties or concerns you faced while working on the task. Your feedback is highly appreciated :D.
-    * If you implement any of the bonus points, please mentioned it in this file.
+* You should edit [NOTES.MD](NOTES.MD) file answering the questions in it.
+* Your feedback is welcomed, even if you are not able to deliver this assignment. 
 
-# Bonus points
-To get additional points, you can apply one of the following:
-* Extend the design to scale multiple columns separately, if you are going to do this, make sure
-to keep the old test cases as is without breaking any code in it and keeping it successful
+# Bonus Points
+To get additional points, you can apply one (or all) of the following:
+* Provide an executable jar file which allows the evaluator to use the implemented utility through 
+    command line as below:
+    ```shell script
+    java -jar iterview-task-1.0-SNAPSHOT.jar [SOURCE_PATH] [DEST_PATH] [COLUMN_TO_NORMALIZE] [NORMALIZATION_METHOD]
+    ```
+    for example: if we want to read the ```/home/user/in/marks.csv``` file, apply a Min-Max normalization against
+     ```mark``` column in it, then save the updated csv file to ```/home/user/out/marks_normalized.csv```, 
+     the command should look like below:
+    ```shell script
+    java -jar interview-task-1.0-SNAPSHOT.jar /home/user/out/marks.csv /home/user/out/marks_normalized.csv mark min-max
+    ``` 
+    if z-score is what to apply, the command should look like below:
+    ```shell script
+    java -jar interview-task-1.0-SNAPSHOT.jar /home/user/out/marks.csv /home/user/out/marks_normalized.csv mark z-score
+    ``` 
 * Support another type of files, like XML or json, make sure to not break the old cases as well.
 * Implement an HTML layout which allows a user to upload a file, choose the column to scale, 
-then generate the result CSV file.
+then generate the result CSV file, provide steps on how to use it.
 * There are some scenarios we didn't cover in our unit tests, can you find them and provide proper
 test coverage for them.
+
+# Grading Criteria
+* All deliverables under [Deliverables](#deliverables) section should be passed, the task will automatically fail
+if one of them is failed or not covered.
+* Implemented production code should be written as clean as possible, the quality of the submitted code
+  is going to be evaluated
+* Your notes written in NOTES.MD is going to be considered.
+* Implementing any of the bonus points should be helpful only if the main deliverables are met within the
+ expected level. 
