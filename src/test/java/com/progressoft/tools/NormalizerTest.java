@@ -75,10 +75,7 @@ public class NormalizerTest {
         List<String> generatedLines = Files.readAllLines(destPath);
         Path assertionPath = copyFile("/marks_z.csv", induction.resolve("marks_z.csv"));
         List<String> expectedLines = Files.readAllLines(assertionPath);
-        Assertions.assertTrue(generatedLines.size() == expectedLines.size(), "lines are not identical");
-        for (int i = 0; i < generatedLines.size(); i++) {
-            Assertions.assertEquals(expectedLines.get(i), generatedLines.get(i));
-        }
+        assertLines(generatedLines, expectedLines);
     }
 
     @Test
@@ -108,11 +105,9 @@ public class NormalizerTest {
         List<String> generatedLines = Files.readAllLines(destPath);
         Path assertionPath = copyFile("/employees_z.csv", induction.resolve("employees_z.csv"));
         List<String> expectedLines = Files.readAllLines(assertionPath);
-        Assertions.assertTrue(generatedLines.size() == expectedLines.size(), "lines are not identical");
-        for (int i = 0; i < generatedLines.size(); i++) {
-            Assertions.assertEquals(expectedLines.get(i), generatedLines.get(i));
-        }
+        assertLines(generatedLines, expectedLines);
     }
+
 
     @Test
     public void givenInvalidInput_whenMinMaxScale_thenThrowException() throws IOException {
@@ -148,8 +143,8 @@ public class NormalizerTest {
         Assertions.assertNotNull(summary, "the returned summary is null");
 
         Assertions.assertEquals(new BigDecimal("66.00"), summary.mean(), "invalid mean");
-        Assertions.assertEquals(new BigDecimal("16.72"), summary.standardDeviation(), "invalid standard deviation");
-        Assertions.assertEquals(new BigDecimal("285.39"), summary.variance(), "invalid variance");
+        Assertions.assertEquals(new BigDecimal("16.73"), summary.standardDeviation(), "invalid standard deviation");
+        Assertions.assertEquals(new BigDecimal("280.00"), summary.variance(), "invalid variance");
         Assertions.assertEquals(new BigDecimal("65.00"), summary.median(), "invalid median");
         Assertions.assertEquals(new BigDecimal("40.00"), summary.min(), "invalid min value");
         Assertions.assertEquals(new BigDecimal("95.00"), summary.max(), "invalid maximum value");
@@ -160,7 +155,7 @@ public class NormalizerTest {
         List<String> generatedLines = Files.readAllLines(destPath);
         Path assertionPath = copyFile("/marks_mm.csv", induction.resolve("marks_mm.csv"));
         List<String> expectedLines = Files.readAllLines(assertionPath);
-        Assertions.assertEquals(expectedLines, generatedLines);
+        assertLines(expectedLines, generatedLines);
     }
 
     @Test
@@ -177,12 +172,12 @@ public class NormalizerTest {
         ScoringSummary summary = normalizer.minMaxScaling(csvPath, destPath, columnName);
         Assertions.assertNotNull(summary, "the returned summary is null");
 
-        Assertions.assertEquals(new BigDecimal("1701.51"), summary.mean(), "invalid mean");
+        Assertions.assertEquals(new BigDecimal("1702.00"), summary.mean(), "invalid mean");
         Assertions.assertEquals(new BigDecimal("785.19"), summary.standardDeviation(), "invalid standard deviation");
-        Assertions.assertEquals(new BigDecimal("626466.64"), summary.variance(), "invalid variance");
-        Assertions.assertEquals(new BigDecimal("1758.0"), summary.median(), "invalid median");
-        Assertions.assertEquals(new BigDecimal("299"), summary.min(), "invalid min value");
-        Assertions.assertEquals(new BigDecimal("2965"), summary.max(), "invalid maximum value");
+        Assertions.assertEquals(new BigDecimal("616523.00"), summary.variance(), "invalid variance");
+        Assertions.assertEquals(new BigDecimal("1758.00"), summary.median(), "invalid median");
+        Assertions.assertEquals(new BigDecimal("299.00"), summary.min(), "invalid min value");
+        Assertions.assertEquals(new BigDecimal("2965.00"), summary.max(), "invalid maximum value");
 
         Assertions.assertTrue(Files.exists(destPath), "the destination file does not exists");
         Assertions.assertFalse(Files.isDirectory(destPath), "the destination is not a file");
@@ -190,7 +185,7 @@ public class NormalizerTest {
         List<String> generatedLines = Files.readAllLines(destPath);
         Path assertionPath = copyFile("/employees_mm.csv", induction.resolve("employees_mm.csv"));
         List<String> expectedLines = Files.readAllLines(assertionPath);
-        Assertions.assertEquals(expectedLines, generatedLines);
+        assertLines(expectedLines, generatedLines);
     }
 
     private final Path copyFile(String resource, Path path) throws IOException {
@@ -203,5 +198,12 @@ public class NormalizerTest {
             }
         }
         return path;
+    }
+
+    private void assertLines(List<String> generatedLines, List<String> expectedLines) {
+        Assertions.assertTrue(generatedLines.size() == expectedLines.size(), "lines are not identical");
+        for (int i = 0; i < generatedLines.size(); i++) {
+            Assertions.assertEquals(expectedLines.get(i), generatedLines.get(i));
+        }
     }
 }
