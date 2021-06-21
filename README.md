@@ -1,9 +1,5 @@
 # Important Note
 The purpose of this assignment is to evaluate the candidates skills as an initial step in the hiring process, it is
-important not to share your solution or even this task with any other party or other potential candidates, this
-will help both of us in our evaluation and hiring process and avoid any discomfort for both of us.
-
-The purpose of this assignment is to evaluate the candidates skills as an initial step in the hiring process, it is
 important not to share the task and the solution of the task with any other party or other potential candidates, this
 will help both of us to have accurate assessment results and avoid any discomfort for both of us.
 
