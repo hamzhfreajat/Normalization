@@ -37,6 +37,10 @@ build command through a terminal it should execute successfully
 ```shell script
 mvn clean install
 ``` 
+* Make sure to send your assignment without output artifacts, this could be accomplished by executing mvn clean
+```shell script
+mvn clean
+```
 * You should edit [NOTES.MD](NOTES.MD) file answering the questions in it.
 * Your feedback is welcomed, even if you are not able to deliver this assignment. 
 
@@ -57,9 +61,9 @@ To get additional points, you can apply one (or all) of the following:
     ```shell script
     java -jar interview-task-1.0-SNAPSHOT.jar /home/user/out/marks.csv /home/user/out/marks_normalized.csv mark z-score
     ``` 
-* Support another type of files, like XML or json, make sure to not break the old cases as well.
+* Support another type of files, like XML or json, make sure to not break the old cases as well. You can utilize third-party dependencies and libraries to implement this
 * Implement an HTML layout which allows a user to upload a file, choose the column to scale, 
-then generate the result CSV file, provide steps on how to use it.
+then generate the result CSV file, provide steps on how to use it. You can utilize third-party dependencies and librarires to implement this.
 * There are some scenarios we didn't cover in our unit tests, can you find them and provide proper
 test coverage for them.
 
