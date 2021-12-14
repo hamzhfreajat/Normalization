@@ -37,7 +37,7 @@ build command through a terminal it should execute successfully
 ```shell script
 mvn clean install
 ``` 
-* Make sure to send your assignment without output artifacts, this could be accomplished by executing mvn clean
+* Make sure to send your assignment without output artifacts, this could be accomplished by executing mvn clean before zipping and submitting the assignment
 ```shell script
 mvn clean
 ```
