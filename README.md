@@ -28,7 +28,7 @@ suit your needs.
 # Deliverables
 **All requirements mentioned in this section is a must, the submission will be considered as failed
 if one is missing**
-* The candidate should clone this project, add his solution, then deliver it as a compressed file.
+* The candidate should clone this project, add his solution, **then deliver it as a compressed file (RAR format) through email**, the mp4 files under docs folder and the target folder (resulted from the maven build) could be removed to reduce the size of the deliverable. Also, it could be shared through Google Drive (or similar media) then share a public access link. Note: the deliverable zip shouldn't exceed 10 MB.
 * All test cases in [unit tests](src/test/java/com/progressoft/tools/NormalizerTest.java) should pass.
 * You are only allowed to use Java SE API, any additional libraries shouldn't be used especially for calculations
 * Always use HALF_EVEN when rounding decimal places and fractions.
